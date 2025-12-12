@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-config-demo
+  labels:
+    project: roboshop
+  annotations:
+    jenkins.url: "https://jenkins.joindevops.com/build/5"
+  resources:
+    requests:
+      cpu: "100mi"
+      memory: "64M"
+    limits:
+      cpu: "250mi"
+      memory: "128M"
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    envFrom:
+      ConfigMapRef:
+        name: pod-config
