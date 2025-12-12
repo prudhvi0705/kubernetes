@@ -8,7 +8,7 @@ metadata:
     annot: annotationsusagepoddemo
 
 spec:
-  container:
+  containers:
   - name: nginx
     image: nginx
     resources:
