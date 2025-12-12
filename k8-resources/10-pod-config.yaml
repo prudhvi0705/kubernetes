@@ -13,11 +13,11 @@ spec:
     image: nginx
     resources:
       requests:
-        cpu: "100mi"
-        memory: "64M"
+        cpu: "100m"
+        memory: "64Mi"
       limits:
-        cpu: "250mi"
-        memory: "128M"
+        cpu: "250m"
+        memory: "128Mi"
     envFrom:
     - configMapRef:
         name: pod-config
