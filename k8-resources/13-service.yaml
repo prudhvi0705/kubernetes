@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     project: roboshop
-ports:
-  - protcol: TCP
-    port: 80 #service port
-    targetPort: 89 #container port
+  ports:
+    - protcol: TCP
+      port: 80 #service port
+      targetPort: 89 #container port
