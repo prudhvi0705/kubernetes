@@ -1,4 +1,4 @@
-        <img width="265" height="245" alt="image" src="https://github.com/user-attachments/assets/bc127e98-1879-4671-a677-ff6d11a08bbc" />
+ <img width="265" height="245" alt="image" src="https://github.com/user-attachments/assets/bc127e98-1879-4671-a677-ff6d11a08bbc" />
 
 This repository contains comprehensive Kubernetes configuration files and project setups used for learning, experimentation, and real-world DevOps workflows.
 It includes:
