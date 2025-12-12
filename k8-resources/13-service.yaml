@@ -7,6 +7,6 @@ spec:
   selector:
     project: roboshop
   ports:
-    - protcol: TCP
+    - protocol: TCP
       port: 80 #service port
       targetPort: 89 #container port
