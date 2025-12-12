@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: LoadBalancer
+  name: pod-lb
   labels:
     project: roboshop
     purpose: customer-demand
