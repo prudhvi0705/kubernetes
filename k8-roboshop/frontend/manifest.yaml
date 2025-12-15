@@ -117,7 +117,7 @@ spec:
           initialDelaySeconds: 15
           periodSeconds: 10
         volumeMounts:
-          - name: nginx-config  
+          - name: nginx 
             mountPath: /etc/nginx/nginx.conf
             subPath: nginx.conf
       
