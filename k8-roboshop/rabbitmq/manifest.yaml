@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: rabbitmq
-        image: rabbitmq:3.0
+        image: rabbitmq:3
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
