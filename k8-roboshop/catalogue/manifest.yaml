@@ -34,6 +34,10 @@ spec:
       - name: catalogue
         image: prudhvimv/catalogue:v1
         imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: catalogue
+
         ports:
         - name: liveness-port
           containerPort: 8080
