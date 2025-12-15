@@ -11,3 +11,4 @@ spec:
   containers:
   - name: debug
     image: prudhvimv/debug:v1
+    imagePullPolicy: Always
