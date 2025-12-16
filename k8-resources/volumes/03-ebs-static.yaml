@@ -7,8 +7,21 @@ spec:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   capacity:
-    storage: 5Gi
+    storage: 15Gi
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
     volumeHandle: vol-070d601a8c1e3580a
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-claim
+spec:
+  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  volumeName: ebs-static
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
