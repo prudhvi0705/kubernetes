@@ -3,21 +3,36 @@ kind: Deployment
 metadata:
   name: nginx
   labels:
-    purpose: rs-demo
+    purpose: headless
     project: roboshop
 
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
-      purpose: rs-demo
-      project: roboshop
+      purpose: headless
+
   template:
     metadata:
       labels:
-        purpose: rs-demo
-        project: roboshop  
+        purpose: headless
+ 
     spec:
       containers:
       - name: nginx
         image: nginx:trixie-perl
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-lb
+spec:
+  type: LoadBalancer
+  selector:
+      purpose: headless
+
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30007
