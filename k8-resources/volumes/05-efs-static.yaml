@@ -3,16 +3,16 @@ kind: PersistentVolume
 metadata:
   name: efs-static
 spec:
-  capacity:
-    storage: 5Gi # dummy, size is elastic
+  capacity: 
+    storage: 5Gi # it can be empty as efs can grow higher
   volumeMode: Filesystem
   accessModes:
-    - ReadWriteOnce
-  storageClassName: "" # should be empty in static
+    - ReadWriteMany
+  storageClassName: ""
   persistentVolumeReclaimPolicy: Retain
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: fs-08ea446237bfb47e1
+    volumeHandle: fs-0de089e549b5755cb
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -20,28 +20,30 @@ metadata:
   name: efs-static
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: ""
   resources:
     requests:
       storage: 5Gi
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-  labels:
-    purpose: efs-static
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    volumeMounts:
-    - name: nginx-html
-      mountPath: /usr/share/nginx/html
-  nodeSelector:
-    topology.kubernetes.io/zone: us-east-1d
-  volumes:
-  - name: nginx-html
-    persistentVolumeClaim:
-      claimName: efs-static
+# ---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: nginx
+#   labels:
+#     purpose: efs-static
+
+# spec:
+  # containers:
+  # - name: nginx
+  #   image: nginx
+  #   volumeMounts:
+  #   - name: nginx-html
+  #     mountPath: /usr/share/nginx/html
+  # nodeSelector:
+  #   topology.kubernetes.io/zone: us-east-1a
+
+  # volumes:
+  # - name: nginx-html
+  #   persistentVolumeClaim:
+  #    claimName: efs-static
