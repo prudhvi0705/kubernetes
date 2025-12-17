@@ -4,10 +4,10 @@ metadata:
   name: efs-static
 spec:
   capacity:
-    storage: "" # it can be empty as efs can grow higher
+    storage: " " # it can be empty as efs can grow higher
   volumeMode: Filesystem
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: efs-static
   persistentVolumeReclaimPolicy: Retain
   csi:
