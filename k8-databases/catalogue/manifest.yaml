@@ -83,9 +83,9 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: catalogue-hpa
   labels:
-      component: catalogue
-      project: roboshop
-      tier: backend
+    component: catalogue
+    project: roboshop
+    tier: backend
   namespace: roboshop
 spec:
   scaleTargetRef:
