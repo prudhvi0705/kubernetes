@@ -45,10 +45,10 @@ spec:
         resources:
           requests:
             cpu: "100m"
-            memory: "150mi"
+            memory: "150Mi"
           limits:
             cpu: "200m"
-            memory: "3000mi"
+            memory: "300Mi"
         readinessProbe:
           httpGet:
             path: /health
@@ -91,7 +91,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: catalogue-deployment
+    name: catalogue
   minReplicas: 1
   maxReplicas: 5
   metrics:
