@@ -36,13 +36,17 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: nginx # has to match .spec.template.metadata.labels
+      project: roboshop
+      purpose: customer-demand
+      importance: high # has to match .spec.template.metadata.labels
   serviceName: "nginx"
   replicas: 3 # by default is 1
   template:
     metadata:
       labels:
-        app: nginx # has to match .spec.selector.matchLabels
+        project: roboshop
+        purpose: customer-demand
+        importance: high # has to match .spec.selector.matchLabels
     spec:
       containers:
       - name: nginx
