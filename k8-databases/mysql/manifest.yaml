@@ -66,17 +66,17 @@ spec:
       containers:
       - name: mysql
         image: prudhvimv/mysql:v1
-        
+        # envFrom:
+        #   - configMapRef:
+        #       name: mysql-config
+
         volumeMounts:
         - name: mysql
-          mountPath: /data/db
-        - name: mysql-configuration
+          mountPath: /var/lib/mysql
+          
+        - name: mysql-config
           mountPath: /etc/mysql/conf.d/my.cnf
           subPath: my.cnf
-          
-          envFrom:
-          - configMapRef:
-              name: mysql-config
 
   volumeClaimTemplates:
   - metadata:
