@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: mysql-config
   namespace: roboshop
-  
+
 data:
   my.cnf: | 
     [mysqld]
@@ -73,7 +73,7 @@ spec:
         volumeMounts:
         - name: mysql
           mountPath: /data/db
-        - name: mysql-config
+        - name: mysql-configuration
           mountPath: /etc/mysql/conf.d/my.cnf
           subPath: my.cnf
 
