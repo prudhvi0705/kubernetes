@@ -63,6 +63,7 @@ spec:
           value: roboshop
         - name: RABBITMQ_DEFAULT_PASS
           value: roboshop123
+          
   volumeClaimTemplates:
   - metadata:
       name: rabbitmq
