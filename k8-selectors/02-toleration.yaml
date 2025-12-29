@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    purpose: taint
+    project: roboshop
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      purpose: taint
+
+  template:
+    metadata:
+      labels:
+        purpose: taint
+ 
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: ip-192-168-27-85.ec2.internal
+      containers:
+      - name: nginx
+        image: nginx
+      tolerations:
+      - key: "project"
+        operator: "Equal"
+        value: "roboshop"
+        effect: "NoSchedule"
