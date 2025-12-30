@@ -27,8 +27,8 @@ spec:
             operator: In
             values:
             - roboshop
+        topologyKey: topology.kubernetes.io/zone
 
   containers:
   - name: nginx
     image: nginx
-    
