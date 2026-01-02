@@ -11,6 +11,7 @@ data:
       - system:masters
       userarn: arn:aws:iam::450558841952:user/suresh
       username: churesh
+    - groups:
       - system:masters
       userarn: arn:aws:iam::450558841952:user/ramesh
       username: ramesh 
