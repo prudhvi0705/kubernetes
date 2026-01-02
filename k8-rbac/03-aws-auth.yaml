@@ -13,7 +13,7 @@ data:
       username: churesh
       - system:masters
       userarn: arn:aws:iam::450558841952:user/Ramesh
-      username: ramesh
+      username: Ramesh
 kind: ConfigMap
 metadata:
   creationTimestamp: "2026-01-02T04:31:42Z"
