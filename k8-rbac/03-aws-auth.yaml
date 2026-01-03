@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   mapRoles: |
-    - rolearn: arn:aws:iam::450558841952:role/eksctl-roboshop-dev-nodegroup-robo-NodeInstanceRole-buzbhg3RXZhW
+    - rolearn: arn:aws:iam::450558841952:role/eksctl-roboshop-dev-nodegroup-robo-NodeInstanceRole-Sev3giXQgCoU
       groups:
       - system:bootstrappers
       - system:nodes
@@ -21,7 +21,7 @@ data:
       username: john
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2026-01-02T04:31:42Z"
+  creationTimestamp: "2026-01-03T05:26:18Z"
   name: aws-auth
   namespace: kube-system
-  uid: 3108b55b-e04c-4df1-be66-4370e30463c6
+  uid: b4b1e9a9-f15e-4fbb-b86e-5490e7b48094
