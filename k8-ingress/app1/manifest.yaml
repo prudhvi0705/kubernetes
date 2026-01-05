@@ -11,13 +11,47 @@ spec:
   selector:
     matchLabels:
       purpose: ingress
+      project: roboshop
 
   template:
     metadata:
       labels:
         purpose: ingress
+        project: roboshop
  
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: prudhvimv/app:v1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app1
+
+spec:
+  selector:
+    purpose: ingress
+    project: roboshop
+
+  ports:
+    - protocol: TCP
+      port: 80 #service port
+      targetPort: 80 #container port
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app1
+spec:
+  rules:
+  - host: "app1.prudhvii.fun"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: app1
+            port:
+              number: 80
