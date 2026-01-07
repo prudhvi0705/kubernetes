@@ -10,8 +10,14 @@ managedNodeGroups:
   instanceTypes: ["m5.large","t3.small", "t3.medium","c5.large"]
   desiredCapacity: 2 #  by default this value is 3
   spot: true
+  labels:
+    env: dev
+    colour: green
 
 - name: roboshop-dev-blue
   instanceTypes: ["m5.large","t3.small", "t3.medium","c5.large"]
   desiredCapacity: 2 #  by default this value is 3
   spot: true
+  labels:
+    env: dev
+    colour: blue
