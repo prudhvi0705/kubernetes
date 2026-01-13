@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-prac
-
+  name: blue
 spec:
   selector:
+    purpose: blue-green
     project: roboshop
-    purpose: customer-demand
-    importance: high
+    colour: blue
   ports:
     - protocol: TCP
       port: 80 #service port
