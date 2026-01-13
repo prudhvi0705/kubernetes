@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: green
+spec:
+  selector:
+    purpose: blue-green
+    project: roboshop
+    colour: green
+  ports:
+    - protocol: TCP
+      port: 80 #service port
+      targetPort: 80 #container port
