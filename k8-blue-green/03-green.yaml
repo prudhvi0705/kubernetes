@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    purpose: blue-green
+    project: roboshop
+    colour: green
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      purpose: blue-green
+      project: roboshop
+      colour: green
+
+  template:
+    metadata:
+      labels:
+        purpose: blue-green
+        project: roboshop
+        colour: green
+ 
+    spec:
+      containers:
+      - name: nginx
+        image: trixie-perl
