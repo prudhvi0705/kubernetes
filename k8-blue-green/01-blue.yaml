@@ -5,7 +5,7 @@ metadata:
   labels:
     purpose: blue-green
     project: roboshop
-    colour: blue
+    colour: green
 
 spec:
   replicas: 3
@@ -13,14 +13,14 @@ spec:
     matchLabels:
       purpose: blue-green
       project: roboshop
-      colour: blue
+      colour: green
 
   template:
     metadata:
       labels:
         purpose: blue-green
         project: roboshop
-        colour: blue
+        colour: green
  
     spec:
       containers:
