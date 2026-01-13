@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-prac
+
+spec:
+  selector:
+    project: roboshop
+    purpose: customer-demand
+    importance: high
+  ports:
+    - protocol: TCP
+      port: 80 #service port
+      targetPort: 80 #container port
